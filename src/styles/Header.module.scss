@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.Header{
+    position: relative;
+    width: 100vw;
+    display: flex;
+    justify-content:center;
+    margin: 2rem 0;
+
+
+    #logo{
+        height: 2rem;
+        padding: 0 2rem;
+    }
+
+    .search{
+        position: relative;
+        input{
+            margin-top: .7rem;
+            width: 25rem;
+            border:1px solid black;
+            border-top: none;
+            border-left: none;
+            border-right:none;
+            text-decoration: none;
+            opacity: .7;
+
+            &:focus, &active{
+                outline:none;
+            }
+
+            #magGlass{
+                position:absolute;
+                z-index: -1;
+                margin-right: 10rem;
+            }
+        }
+    
+       
+    }
+    #user{
+        padding-left: 2rem;
+    }
+
+    span{
+        margin-top:.5rem;
+        padding-left:.5rem;
+    }
+
+    #shoppingCart{
+        padding: 0 2rem;
+    }
+}
