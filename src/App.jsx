@@ -12,9 +12,7 @@ function App() {
   return (
     <>
       <Header/>
-      <img src={Banner} id={style.Banner} alt="" />     
-      <span>mais vendidos</span>
-      <span>line</span>
+      <img src={Banner} id={style.Banner} alt="" />   
       <PopularProducts/>      
       <form className={style.news} action="">
         <span>Participe de nossas news com promoções e novidades!</span>
