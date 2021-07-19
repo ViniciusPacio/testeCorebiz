@@ -1,0 +1,96 @@
+footer{
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    background:black;
+    color: white;
+    width:100%;
+        
+    .localizacao{
+        font-weight: 400;
+        font-size:13px;
+        padding: 2rem 0;
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 10rem;
+        row-gap: .8rem;   
+        
+        #line{
+            border: 2px solid white;
+            width:2.7rem;
+        }
+
+        #title{
+            font-weight: 700;
+            font-size: 20px;
+        }
+    }
+
+
+    .contato{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 2rem;
+
+        button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            height:3rem;
+            width:15rem;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding-right: 2.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            img{
+                padding: 0 1rem;
+            }            
+        }
+        #buttonEmail{
+            padding-right: 3rem;
+        }
+    }
+
+    .logos{
+        display: flex;
+        align-items: center;
+        width: 20rem;
+        margin: 0 5rem;
+
+        
+        .core{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            span{
+                opacity:.5;
+                font-weight: 400;
+                width:7rem;
+            }
+            img{
+                width:7rem;
+            }
+        }
+
+        .vtex{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 1rem;
+            span{
+                padding-left: 2rem;
+                opacity:.5;
+                font-weight: 400;
+                width:7rem;
+            }
+
+            img{
+                width:5rem;
+            }
+        }
+    }
+
+}
+
