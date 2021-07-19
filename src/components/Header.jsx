@@ -20,7 +20,7 @@ export default function Header(){
             items=JSON.parse(items)
             setQtProduct(items)
         }
-    },[])
+    },[setQtProduct])
 
     return (
         <>

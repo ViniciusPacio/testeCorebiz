@@ -10,32 +10,46 @@ import RightArrow from './images/right-arrow.png'
 
 import style from './styles/App.module.scss'
 
+import { useForm } from 'react-hook-form';
+
+import axios from 'axios';
+
 function App() {
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = data => axios.post(`https://jsonplaceholder.typicode.com/users`, { data }).then(res => {
+    console.log(res);
+    console.log(res.data);
+  })
+
   return (
     <>
-      <Header/>
-      <img src={Banner} id={style.Banner} alt="" />   
-      <div className={style.bestSellers}>  
+      <Header />
+      <img src={Banner} id={style.Banner} alt="" />
+      <div className={style.bestSellers}>
         <span>Mais Vendidos</span>
         <span id={style.line}></span>
       </div>
       <div className={style.products}>
         <img id={style.ArrowL} className={style.Arrows} src={LeftArrow} alt="" />
-        <PopularProducts idProduct={0}/>
-        <PopularProducts idProduct={1}/>   
-        <PopularProducts idProduct={2}/>   
-        <PopularProducts idProduct={3}/>  
+        <PopularProducts idProduct={0} />
+        <PopularProducts idProduct={1} />
+        <PopularProducts idProduct={2} />
+        <PopularProducts idProduct={3} />
         <img id={style.ArrowR} className={style.Arrows} src={RightArrow} alt="" />
-      </div>       
-      <form className={style.news} action="">
+      </div>
+      <div className={style.news}>
         <span>Participe de nossas news com promoções e novidades!</span>
-        <div className={style.register}>          
-          <input className={style.input} type="text" placeholder="Digite de nome" />
-          <input className={style.input} type="text" placeholder="Digite de email"/>
+        <form className={style.register} onSubmit={handleSubmit(onSubmit)}>
+          <input className={style.name} name='name' placeholder="Digite seu nome" type="text" {...register('name', { required: true })}
+          />
+          {errors.name && <p id={style.errorName}>Esse campo é obrigatório</p>}
+          <input className={style.email} name='email' placeholder="Digite seu email" type="email" {...register('email', { required: true })} />
+          {errors.email && <p id={style.errorEmail}>Esse campo é obrigatório</p>}
           <button type="submit">Eu quero!</button>
-        </div>
-      </form>
-      <Footer/>
+        </form>
+      </div>
+      <Footer />
     </>
   );
 }

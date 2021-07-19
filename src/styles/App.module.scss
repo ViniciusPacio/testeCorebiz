@@ -48,6 +48,7 @@
 
 .news{
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -59,9 +60,20 @@
     margin-top:3rem;
     .register{
         margin-top:.5rem;
+        #errorEmail{
+            color: red;
+            position:absolute;
+            margin-left:20rem;
+        }
+
+        #errorName{
+            color: red;
+            position:absolute;
+            margin-left: 2rem;
+        }
     }
 
-    .input{
+    input{
         height:2.5rem;
         width:15rem;
         border: 1px solid white;
@@ -75,6 +87,7 @@
     }
 
     button{
+        display: fixed;
         background:#000;
         color:#fff;
         width:8.5rem;
