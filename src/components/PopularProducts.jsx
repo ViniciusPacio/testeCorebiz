@@ -9,10 +9,6 @@ import Star2 from '../images/star2.svg'
 
 import {AuthContext} from '../contexts/Compra'
 
-
-
-//useEffect em arquivo separado, importando em cada card que for feito
-//
 export default function PopularProducts(props){
     const [product, setProduct]=useState([]);
 
@@ -52,14 +48,7 @@ export default function PopularProducts(props){
         axios.get('https://corebiz-test.herokuapp.com/api/v1/products').then(response=>setProduct(response.data))
             .catch((err)=>{
                 console.error("erro"+ err)
-            })
-
-
-
-            // let teste;
-            // let array
-            // teste=JSON.stringify(product[props.idProduct]?.price)
- 
+            }) 
     },[]);
 
     return(     
